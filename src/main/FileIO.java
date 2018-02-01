@@ -1,4 +1,5 @@
 package main;
+import java.util.ArrayList;
 import java.io.*;
 import java.util.Scanner;
 public class FileIO {
@@ -20,11 +21,25 @@ public class FileIO {
 		}
 		
 		int total = 0;
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		int i =0;
 		while(input.hasNext()) {
-			total+=Integer.parseInt(input.nextLine());
+			int value = Integer.parseInt(input.nextLine());
+			total+=value;
+			numbers.add(value);
+			
+			
 		}
 		
-		System.out.println("Total: "+ total);
+		for (Integer x: numbers) {
+			if (((int)x)%2==0) {
+				System.out.println("Even number: " + x);
+			}
+			if (((int)x)%2!=0) {
+				System.out.println("Odd number: " + x);
+			}
+		}
+	
 				
 	}
 }
