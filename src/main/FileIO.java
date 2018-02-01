@@ -20,8 +20,16 @@ public class FileIO {
 		}
 		
 		int total = 0;
+		int count = 0;
 		while(input.hasNext()) {
-			total+=Integer.parseInt(input.nextLine());
+			String curr = input.nextLine();
+			total+=Integer.parseInt(curr);
+			count++;
+			if(count == 5)
+			{
+				System.out.println("Fifth number is: "+curr);
+				count = 0;
+			}
 		}
 		
 		System.out.println("Total: "+ total);
