@@ -1,4 +1,5 @@
 package main;
+import java.util.ArrayList;
 import java.io.*;
 import java.util.Scanner;
 public class FileIO {
@@ -20,8 +21,30 @@ public class FileIO {
 		}
 		
 		int total = 0;
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		int i =0;
+		int count = 0;
+		
+		try {
+			input = new Scanner(inFile);
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found.");
+		}
+		
 		while(input.hasNext()) {
-			total+=Integer.parseInt(input.nextLine());
+			String curr = input.nextLine();
+			total+=Integer.parseInt(curr);
+			count++;
+			if(count == 5)
+			{
+				System.out.println("Fifth number is: "+curr);
+				count = 0;
+			}
+			int value = Integer.parseInt(input.nextLine());
+			total+=value;
+			numbers.add(value);
+			
+			
 		}
 		
 		System.out.println("Total: "+ total);
@@ -43,5 +66,15 @@ public class FileIO {
 				System.out.println(check);
 			}
 		}
+		for (Integer x: numbers) {
+			if (((int)x)%2==0) {
+				System.out.println("Even number: " + x);
+			}
+			if (((int)x)%2!=0) {
+				System.out.println("Odd number: " + x);
+			}
+		}
+	
+				
 	}
 }
