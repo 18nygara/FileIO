@@ -24,6 +24,13 @@ public class FileIO {
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
 		int i =0;
 		int count = 0;
+		
+		try {
+			input = new Scanner(inFile);
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found.");
+		}
+		
 		while(input.hasNext()) {
 			String curr = input.nextLine();
 			total+=Integer.parseInt(curr);
