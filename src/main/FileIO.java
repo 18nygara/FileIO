@@ -23,7 +23,16 @@ public class FileIO {
 		int total = 0;
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
 		int i =0;
+		int count = 0;
 		while(input.hasNext()) {
+			String curr = input.nextLine();
+			total+=Integer.parseInt(curr);
+			count++;
+			if(count == 5)
+			{
+				System.out.println("Fifth number is: "+curr);
+				count = 0;
+			}
 			int value = Integer.parseInt(input.nextLine());
 			total+=value;
 			numbers.add(value);
