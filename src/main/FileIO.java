@@ -47,6 +47,25 @@ public class FileIO {
 			
 		}
 		
+		System.out.println("Total: "+ total);
+		
+		System.out.println("Displaying all numbers divisible by 3...");
+		
+		String check = "";
+		
+		try {
+			input = new Scanner(inFile);
+		} catch (FileNotFoundException e) {
+			System.out.println("File does not exist.");
+			e.printStackTrace();
+		}
+		
+		while (input.hasNext()) {
+			check = input.nextLine();
+			if (Integer.parseInt(check) % 3 == 0) {
+				System.out.println(check);
+			}
+		}
 		for (Integer x: numbers) {
 			if (((int)x)%2==0) {
 				System.out.println("Even number: " + x);
